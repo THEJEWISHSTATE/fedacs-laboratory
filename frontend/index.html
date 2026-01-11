@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FEDACS Lab | Laboratorio Umanizzato</title>
+    <meta name="description" content="Un'applicazione interattiva per esplorare il framework FEDACS attraverso scenari narrativi profondi." />
+    
+    <!-- Fonts (facoltativo, ma migliora l'estetica) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (verrà iniettato da Vite durante lo sviluppo) -->
+    <script>
+      // Previene il flash di contenuto non stilizzato (FOUC) in alcuni browser
+      (function() {
+        // Controlla se Tailwind è già caricato
+        if (!document.documentElement.classList.contains('tw-loaded')) {
+          // Nascondi il corpo fino a quando Tailwind non è pronto
+          document.documentElement.style.opacity = '0';
+          document.documentElement.classList.add('tw-loading');
+          
+          // Ripristina la visibilità quando la pagina è completamente caricata
+          window.addEventListener('DOMContentLoaded', () => {
+            document.documentElement.style.opacity = '1';
+            document.documentElement.classList.remove('tw-loading');
+            document.documentElement.classList.add('tw-loaded');
+          });
+        }
+      })();
+    </script>
+    
+    <style>
+      /* Stili di base per il periodo di caricamento */
+      html.tw-loading {
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+      }
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      }
+    </style>
+  </head>
+  <body class="antialiased text-gray-900">
+    <!-- Root container per React -->
+    <div id="root"></div>
+    
+    <!-- Punto di ingresso per l'app React (gestito da Vite) -->
+    <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Note di debug per lo sviluppo -->
+    <noscript>
+      <div style="position: fixed; top: 0; left: 0; right: 0; background: #dc2626; color: white; padding: 1rem; text-align: center;">
+        ⚠️ Per utilizzare il FEDACS Lab, è necessario abilitare JavaScript nel tuo browser.
+      </div>
+    </noscript>
+    
+    <!-- Fallback per browser molto vecchi (facoltativo) -->
+    <script>
+      // Controllo base per modern JavaScript features
+      if (typeof Promise === 'undefined' || typeof fetch === 'undefined') {
+        document.body.innerHTML = `
+          <div style="max-width: 600px; margin: 4rem auto; padding: 2rem; background: white; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <h2 style="color: #dc2626; margin-top: 0;">Browser non supportato</h2>
+            <p>Il FEDACS Lab richiede un browser moderno con supporto a JavaScript ES6+.</p>
+            <p>Si consiglia di aggiornare all'ultima versione di Chrome, Firefox, Safari o Edge.</p>
+          </div>
+        `;
+      }
+    </script>
+  </body>
+</html>

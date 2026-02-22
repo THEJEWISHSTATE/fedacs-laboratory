@@ -34,9 +34,6 @@ Designed for visual impairment:
 ---
 
 *"The cure for over-sampling is not to stop sampling, but to learn to do it consciously."*
-## 🚀 Live Simulator (Replit)
 
-The interactive web simulator for the Identity Drift Lab is hosted live on Replit:
-**👉 [Access the Live Simulator](https://ai-simulator--cazzambuto.replit.app)**
 
-*Note: This React/TypeScript application requires a Node.js runtime environment and is hosted externally to preserve full functionality.*
+

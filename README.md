@@ -35,5 +35,6 @@ Designed for visual impairment:
 
 *"The cure for over-sampling is not to stop sampling, but to learn to do it consciously."*
 
+https://thejewishstate.github.io/fedacs-laboratory/fedacs-lab.html
 
 
